@@ -7,9 +7,11 @@ import { Productos } from './components/productos/productos';
 import { Ofertas } from './components/ofertas/ofertas';
 import { Resenas } from './components/resenas/resenas';
 import { Formulario } from './components/formulario/formulario';
+import { Nosotros } from './components/nosotros/nosotros';
+import { Footer } from './components/footer/footer';
 
 @Component({
-  imports: [RouterOutlet, Navbar, Inicio, Categorias, Productos, Ofertas, Resenas, Formulario],
+  imports: [RouterOutlet, Navbar, Inicio, Categorias, Productos, Ofertas, Resenas, Formulario, Nosotros, Footer],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
