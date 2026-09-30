@@ -1,0 +1,41 @@
+<section id="resenas" class="container my-5">
+
+  <div class="text-center mb-4">
+    <h2 class="fw-bold">Opiniones de nuestros clientes</h2>
+    <p class="text-secondary">
+      Conoce la experiencia de nuestros clientes
+    </p>
+  </div>
+
+  <div class="row g-4">
+
+    <div
+      class="col-12 col-md-4"
+      *ngFor="let resena of resenas"
+    >
+
+      <article class="card h-100 shadow-sm">
+
+        <div class="card-body">
+
+          <h3 class="h5">
+            {{ resena.nombre }}
+          </h3>
+
+          <p class="text-warning">
+            ⭐ {{ resena.puntuacion }}/5
+          </p>
+
+          <p class="text-secondary">
+            "{{ resena.comentario }}"
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
