@@ -1,40 +1,38 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ResenaService } from '../../services/resena';
 
 @Component({
-  imports: [FormsModule, CommonModule],
   selector: 'app-formulario',
-  styleUrl: './formulario.css',
+  imports: [FormsModule, CommonModule],
   templateUrl: './formulario.html',
+  styleUrl: './formulario.css'
 })
 export class Formulario {
-   nombre = signal('');
-  comentario = signal('');
 
-  resenas = signal([
-    {
-      nombre: 'Ana',
-      comentario: 'Muy buena atención.'
-    }
-  ]);
+  nombre = '';
+  comentario = '';
+
+  constructor(private resenaService: ResenaService) {}
 
   agregarResena() {
 
-    if (this.nombre() === '' || this.comentario() === '') {
+    if (this.nombre === '' || this.comentario === '') {
       return;
     }
 
-    this.resenas.update(resenas => [
-      ...resenas,
-      {
-        nombre: this.nombre(),
-        comentario: this.comentario()
-      }
-    ]);
+    this.resenaService.agregarResena({
+      nombre: this.nombre,
+      comentario: this.comentario
+    });
 
-    this.nombre.set('');
-    this.comentario.set('');
+    this.nombre = '';
+    this.comentario = '';
+  }
+
+  get resenas() {
+    return this.resenaService.obtenerResenas();
   }
 
 }

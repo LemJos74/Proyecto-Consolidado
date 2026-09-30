@@ -7,50 +7,50 @@
     </p>
   </div>
 
-  <div class="row">
+  <div class="col-12 col-md-6 mx-auto">
 
-    <div class="col-12 col-md-6 mx-auto">
+    <form
+      (ngSubmit)="agregarResena()"
+      class="card shadow-sm p-4"
+    >
 
-      <form (ngSubmit)="agregarResena()" class="card shadow-sm p-4">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">
+          Nombre
+        </label>
 
-        <div class="mb-3">
-          <label for="nombre" class="form-label">
-            Nombre
-          </label>
+        <input
+          id="nombre"
+          type="text"
+          class="form-control"
+          name="nombre"
+          [(ngModel)]="nombre"
+          required
+        >
+      </div>
 
-          <input
-            id="nombre"
-            type="text"
-            class="form-control"
-            name="nombre"
-            [(ngModel)]="nombre"
-          >
-        </div>
+      <div class="mb-3">
+        <label for="comentario" class="form-label">
+          Comentario
+        </label>
 
-        <div class="mb-3">
-          <label for="comentario" class="form-label">
-            Comentario
-          </label>
+        <textarea
+          id="comentario"
+          class="form-control"
+          name="comentario"
+          rows="4"
+          [(ngModel)]="comentario"
+          required
+        ></textarea>
+      </div>
 
-          <textarea
-            id="comentario"
-            class="form-control"
-            name="comentario"
-            rows="4"
-            [(ngModel)]="comentario"
-          ></textarea>
-        </div>
+      <button type="submit" class="btn btn-primary">
+        Enviar reseña
+      </button>
 
-        <button type="submit" class="btn btn-primary">
-          Enviar reseña
-        </button>
-
-      </form>
-
-    </div>
+    </form>
 
   </div>
-
 
   <div class="mt-5">
 
@@ -62,7 +62,6 @@
       class="card mb-3"
       *ngFor="let resena of resenas()"
     >
-
       <div class="card-body">
 
         <h4 class="h6 fw-bold">
@@ -74,7 +73,6 @@
         </p>
 
       </div>
-
     </div>
 
   </div>
