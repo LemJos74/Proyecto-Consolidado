@@ -1,0 +1,10 @@
+section {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+img {
+  max-height: 350px;
+  object-fit: contain;
+}

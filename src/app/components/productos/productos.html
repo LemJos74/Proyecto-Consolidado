@@ -1,0 +1,51 @@
+<section id="productos" class="container my-5">
+
+  <div class="text-center mb-4">
+    <h2 class="fw-bold">Nuestros productos</h2>
+    <p class="text-secondary">
+      Conoce algunos de nuestros productos disponibles
+    </p>
+  </div>
+
+  <div class="row g-4">
+
+    <div
+      class="col-12 col-md-6 col-lg-4"
+      *ngFor="let producto of productos"
+    >
+
+      <article class="card h-100 shadow-sm">
+
+        <img
+          [src]="producto.imagen"
+          [alt]="producto.nombre"
+          class="card-img-top"
+        >
+
+        <div class="card-body d-flex flex-column">
+
+          <span class="badge bg-secondary align-self-start mb-2">
+            {{ producto.categoria }}
+          </span>
+
+          <h3 class="h5">
+            {{ producto.nombre }}
+          </h3>
+
+          <p class="fs-5 fw-bold text-primary mt-auto">
+            S/ {{ producto.precio }}
+          </p>
+
+          <button class="btn btn-primary">
+            Ver producto
+          </button>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
